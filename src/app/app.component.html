@@ -1,16 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <app-header></app-header>
+      <app-header
+        (recipesClicked)="setPageToRecipes()"
+        (shoppingListClicked)="setPageToShoppingList()"
+      ></app-header>
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="doShowRecipesPage()">
     <div class="col-xs-12">
       <app-recipe-book></app-recipe-book>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" *ngIf="doShowShoppingListPage()">
     <div class="col-xs-12">
       <app-shopping-list></app-shopping-list>
     </div>
