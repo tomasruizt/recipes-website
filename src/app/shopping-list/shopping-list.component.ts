@@ -9,5 +9,9 @@ export class ShoppingListComponent {
   private ingredients: Ingredient[] = [
     new Ingredient("Carrot", 3),
     new Ingredient("Potato", 5),
-  ]
+  ];
+
+  addNewIngredient(newIngredient: Ingredient) {
+    this.ingredients.push(newIngredient);
+  }
 }
